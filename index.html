@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sydney Jo Jackson</title>
+    <title>Sydney Jo Jackson | Official Site</title>
     <style>
         /* Base Reset & Typography */
         * {
@@ -16,6 +16,7 @@
             color: #ffffff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
         }
         
         /* Minimalist Navigation */
@@ -28,6 +29,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.9), transparent);
         }
         .logo {
             font-size: 1.2rem;
@@ -57,8 +59,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* We will replace this gray gradient with her actual cover art or video later */
-            background: linear-gradient(to bottom, rgba(5,5,5,0.3), #050505), #1a1a1a;
+            /* Placeholder background - you can replace the URL with her press photo */
+            background: linear-gradient(to bottom, rgba(5,5,5,0.4), #050505), url('https://images.unsplash.com/photo-1516280440502-3c5b36a18d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -67,18 +69,34 @@
             font-weight: 700;
             letter-spacing: -2px;
             margin-bottom: 1rem;
+            text-transform: uppercase;
         }
         .hero p {
             font-size: 1.1rem;
             opacity: 0.7;
             letter-spacing: 4px;
             text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #050505;
         }
 
         /* Content Sections */
         section {
-            padding: 8rem 2rem;
-            max-width: 1200px;
+            padding: 6rem 2rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .section-title {
@@ -86,11 +104,56 @@
             margin-bottom: 3rem;
             border-bottom: 1px solid #333;
             padding-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Bio Section */
+        .bio-text {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
         }
         
-        /* Mobile Adjustments */
+        /* Media Containers */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-bottom: 3rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Footer & Socials */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        .social-links a:hover {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* We can add a hamburger menu later */
+            .nav-links { display: none; }
             nav { justify-content: center; }
         }
     </style>
@@ -102,23 +165,54 @@
         <div class="nav-links">
             <a href="#music">Music</a>
             <a href="#visuals">Visuals</a>
+            <a href="#bio">Bio</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>SYDNEY JO JACKSON</h1>
-        <p>Latest Release Out Now</p>
+        <h1>Sydney Jo Jackson</h1>
+        <p>New Single "Don't Stop" Out Now</p>
+        <a href="#music" class="btn">Listen Now</a>
     </header>
 
     <section id="music">
         <h2 class="section-title">Music</h2>
-        <p style="opacity: 0.5;">[ Spotify Player Embed Will Go Here ]</p>
+        <!-- Spotify Embed -->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/YOUR_SPOTIFY_TRACK_ID_HERE?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </section>
 
     <section id="visuals">
         <h2 class="section-title">Visuals</h2>
-        <p style="opacity: 0.5;">[ YouTube Video Embed Will Go Here ]</p>
+        <!-- YouTube Embed: Don't Stop -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/7--YdAbBv1M" title="Sydney Jo Jackson - Don't Stop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- YouTube Embed: You Should Be Here -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/1hZ4Fnc1JkU" title="Sydney Jo Jackson - You Should Be Here" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="bio">
+        <h2 class="section-title">About</h2>
+        <p class="bio-text">
+            Birmingham-born, London-based artist Sydney Jo Jackson crafts a sound that is fearless and addictive. Inspired by legends like Millie Jackson, Tina Turner, and Prince, Sydney fuses old-school soul, blues, and funk with a modern edge.
+        </p>
+        <p class="bio-text">
+            Her music is born from life's chaos, turning raw emotion, vulnerability, and resilience into powerful art. With over a million streams to date and a #1 spot on Australia's ARIA Dance Chart with Husky's "Get Down," Sydney's gritty, soulful voice cuts straight to the heart.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Connect</h2>
+        <a href="mailto:management@sydneyjojackson.com" class="btn">Contact Management</a>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/sydneyjojackson/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@sydneyjojackson" target="_blank">TikTok</a>
+            <a href="https://www.facebook.com/sydneyjojackson/" target="_blank">Facebook</a>
+        </div>
     </section>
 
 </body>
