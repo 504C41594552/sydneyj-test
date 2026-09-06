@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sydney Jo Jackson | Official Site</title>
+    <title>Sydney Jo Jackson | Official Site & EPK</title>
     <style>
-        /* Base Reset & Typography */
+        /* Base Reset & DPR Dark Theme */
         * {
             margin: 0;
             padding: 0;
@@ -19,39 +19,41 @@
             line-height: 1.6;
         }
         
-        /* Minimalist Navigation */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.9), transparent);
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
             margin-left: 2rem;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            opacity: 0.7;
+            opacity: 0.6;
             transition: opacity 0.3s ease;
         }
         .nav-links a:hover {
             opacity: 1;
         }
 
-        /* Cinematic Hero Section */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -59,71 +61,106 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Placeholder background - you can replace the URL with her press photo */
-            background: linear-gradient(to bottom, rgba(5,5,5,0.4), #050505), url('https://images.unsplash.com/photo-1516280440502-3c5b36a18d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            padding: 0 1rem;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.3), #050505), 
+                        url('https://images.unsplash.com/photo-1516280440502-3c5b36a18d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
         }
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.7;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Button Styles */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .btn {
-            padding: 12px 30px;
+            padding: 12px 28px;
             border: 1px solid #fff;
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
             transition: all 0.3s ease;
+            background: transparent;
+            cursor: pointer;
         }
-        .btn:hover {
+        .btn-primary {
             background-color: #fff;
             color: #050505;
         }
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
 
-        /* Content Sections */
+        /* Layout Sections */
         section {
             padding: 6rem 2rem;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
 
-        /* Bio Section */
-        .bio-text {
+        /* Support & Buy Cards */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .card h3 {
             font-size: 1.1rem;
-            color: #ccc;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .card p {
+            font-size: 0.85rem;
+            color: #888;
             margin-bottom: 1.5rem;
         }
-        
-        /* Media Containers */
+
+        /* Video Embeds */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            background: #111;
         }
         .video-container iframe {
             position: absolute;
@@ -133,28 +170,49 @@
             height: 100%;
         }
 
-        /* Footer & Socials */
+        /* Newsletter Form */
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 1.5rem auto 0 auto;
+        }
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            padding: 12px 16px;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+        /* Footer */
         .social-links {
             display: flex;
             gap: 2rem;
+            justify-content: center;
             margin-top: 2rem;
         }
         .social-links a {
             color: #fff;
             text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.5;
             transition: opacity 0.3s ease;
         }
-        .social-links a:hover {
-            opacity: 1;
-        }
+        .social-links a:hover { opacity: 1; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             nav { justify-content: center; }
+            .newsletter-form { flex-direction: column; }
         }
     </style>
 </head>
@@ -164,50 +222,96 @@
         <div class="logo">Sydney Jo Jackson</div>
         <div class="nav-links">
             <a href="#music">Music</a>
+            <a href="#store">Support</a>
             <a href="#visuals">Visuals</a>
-            <a href="#bio">Bio</a>
+            <a href="#about">Bio</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header class="hero">
         <h1>Sydney Jo Jackson</h1>
-        <p>New Single "Don't Stop" Out Now</p>
-        <a href="#music" class="btn">Listen Now</a>
+        <p>"Don't Stop" Out Now</p>
+        <div class="btn-group">
+            <a href="#music" class="btn btn-primary">Stream Music</a>
+            <a href="#store" class="btn">Support / Buy Track</a>
+        </div>
     </header>
 
+    <!-- Music Section -->
     <section id="music">
-        <h2 class="section-title">Music</h2>
-        <!-- Spotify Embed -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1XGT4DrD25XmSbbDdCTh6v?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <h2 class="section-title">Latest Release</h2>
+        
+        <!-- Working Spotify Embed -->
+        <iframe style="border-radius:12px; margin-bottom: 2rem;" src="https://open.spotify.com/embed/track/1XGT4DrD25XmSbbDdCTh6v?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <!-- Quick Streaming Buttons -->
+        <div class="btn-group" style="margin-top: 1.5rem;">
+            <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ARTIST_ID" target="_blank" class="btn">Follow on Spotify</a>
+            <a href="https://music.apple.com/artist/sydney-jo-jackson/YOUR_APPLE_ID" target="_blank" class="btn">Apple Music</a>
+        </div>
     </section>
 
+    <!-- Support / Store Section -->
+    <section id="store">
+        <h2 class="section-title">Buy & Direct Support</h2>
+        <p style="color: #aaa; text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">
+            Streaming earns less than $0.004 per play. Buying music directly or joining the fan community is the single best way to fund future releases and music videos.
+        </p>
+
+        <div class="support-grid">
+            <div class="card">
+                <h3>Bandcamp Store</h3>
+                <p>Buy high-quality digital downloads, stems, and exclusive releases directly from Sydney.</p>
+                <a href="https://bandcamp.com" target="_blank" class="btn btn-primary">Buy Track ($1+)</a>
+            </div>
+            <div class="card">
+                <h3>Direct Tip Jar</h3>
+                <p>Send direct support via PayPal or Buy Me a Coffee to fund her next video production.</p>
+                <a href="https://buymeacoffee.com" target="_blank" class="btn">Send Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visuals Section -->
     <section id="visuals">
         <h2 class="section-title">Visuals</h2>
-        <!-- YouTube Embed: Don't Stop -->
+        
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/7--YdAbBv1M" title="Sydney Jo Jackson - Don't Stop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <!-- YouTube Embed: You Should Be Here -->
+
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/1hZ4Fnc1JkU" title="Sydney Jo Jackson - You Should Be Here" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section id="bio">
+    <!-- About Section -->
+    <section id="about">
         <h2 class="section-title">About</h2>
-        <p class="bio-text">
+        <p style="color: #ccc; margin-bottom: 1.5rem; font-size: 1.05rem;">
             Birmingham-born, London-based artist Sydney Jo Jackson crafts a sound that is fearless and addictive. Inspired by legends like Millie Jackson, Tina Turner, and Prince, Sydney fuses old-school soul, blues, and funk with a modern edge.
         </p>
-        <p class="bio-text">
-            Her music is born from life's chaos, turning raw emotion, vulnerability, and resilience into powerful art. With over a million streams to date and a #1 spot on Australia's ARIA Dance Chart with Husky's "Get Down," Sydney's gritty, soulful voice cuts straight to the heart.
+        <p style="color: #ccc; font-size: 1.05rem;">
+            With over a million streams to date and a #1 spot on Australia's ARIA Dance Chart alongside Husky on "Get Down," Sydney's gritty, soulful voice cuts straight to the heart.
         </p>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Connect</h2>
-        <a href="mailto:management@sydneyjojackson.com" class="btn">Contact Management</a>
+    <!-- Newsletter & Contact -->
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Join The Inner Circle</h2>
+        <p style="color: #888;">Get early access to unreleased music, private video drops, and show announcements.</p>
         
+        <form class="newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+        </form>
+
+        <div style="margin-top: 4rem;">
+            <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: #666; margin-bottom: 1rem;">Booking & Management</p>
+            <a href="mailto:management@sydneyjojackson.com" class="btn">management@sydneyjojackson.com</a>
+        </div>
+
         <div class="social-links">
             <a href="https://www.instagram.com/sydneyjojackson/" target="_blank">Instagram</a>
             <a href="https://www.tiktok.com/@sydneyjojackson" target="_blank">TikTok</a>
