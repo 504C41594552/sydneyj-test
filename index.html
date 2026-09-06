@@ -1,10 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sydney Jo Jackson | EPK</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Jo Jackson</title>
+    <style>
+        /* Base Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Minimalist Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Cinematic Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* We will replace this gray gradient with her actual cover art or video later */
+            background: linear-gradient(to bottom, rgba(5,5,5,0.3), #050505), #1a1a1a;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* We can add a hamburger menu later */
+            nav { justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Sydney's Website is Live.</h1>
-    <p>Welcome</p>
+
+    <nav>
+        <div class="logo">Sydney Jo Jackson</div>
+        <div class="nav-links">
+            <a href="#music">Music</a>
+            <a href="#visuals">Visuals</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>SYDNEY JO JACKSON</h1>
+        <p>Latest Release Out Now</p>
+    </header>
+
+    <section id="music">
+        <h2 class="section-title">Music</h2>
+        <p style="opacity: 0.5;">[ Spotify Player Embed Will Go Here ]</p>
+    </section>
+
+    <section id="visuals">
+        <h2 class="section-title">Visuals</h2>
+        <p style="opacity: 0.5;">[ YouTube Video Embed Will Go Here ]</p>
+    </section>
+
 </body>
 </html>
